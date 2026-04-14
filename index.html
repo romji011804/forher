@@ -48,6 +48,7 @@ button {padding: 10px 16px;font-size: 0.95em;}
 </style>
 </head>
 <body>
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=YOUR_KEY"></script>
 <div class="container">
 <div class="hero">
 <h1>Hello, Bebe ♥️</h1>
@@ -291,15 +292,29 @@ async function fetchVerseFromAPI(emotion) {
 
 function speakVerse() {
     if (!currentVerse) return;
-    if ('speechSynthesis' in window) {
-        speechSynthesis.cancel();
-        const utterance = new SpeechSynthesisUtterance(`${currentVerse.text}. ${currentVerse.reference}`);
-        utterance.rate = 0.85;
-        utterance.pitch = 1;
-        speechSynthesis.speak(utterance);
-    } else {
-        alert('Speech synthesis not supported in your browser');
+    
+    // Stop any currently playing speech
+    if (responsiveVoice.isPlaying()) {
+        responsiveVoice.cancel();
     }
+    
+    const text = `${currentVerse.text}. ${currentVerse.reference}`;
+    
+    // Using ResponsiveVoice with a natural female voice
+    responsiveVoice.speak(text, "UK English Female", {
+        rate: 0.85,
+        pitch: 1,
+        volume: 1,
+        onstart: function() {
+            console.log("Speech started");
+        },
+        onend: function() {
+            console.log("Speech ended");
+        },
+        onerror: function() {
+            alert('Unable to play audio. Please try again.');
+        }
+    });
 }
 
 function copyVerse() {
