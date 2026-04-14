@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For you, Bebe♥️</title>
+<style>
+* {margin: 0;padding: 0;box-sizing: border-box;}
+body {font-family: 'Georgia', serif;background: linear-gradient(135deg, #fdfaf6 0%, #f5ebe0 100%);color: #4a4a4a;line-height: 1.8;min-height: 100vh;padding: 20px;}
+.container {max-width: 700px;margin: 0 auto;padding: 40px 20px;}
+.hero {text-align: center;margin-bottom: 60px;padding: 40px 20px;background: rgba(255, 255, 255, 0.6);border-radius: 20px;box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);}
+.hero h1 {font-size: 2.5em;font-weight: normal;color: #8b6f47;margin-bottom: 20px;}
+.hero-message {font-size: 1.1em;color: #666;font-style: italic;margin: 15px 0;}
+.verse-reference-hero {font-size: 0.95em;color: #8b6f47;font-weight: bold;margin: 10px 0 25px 0;}
+.personal-note {font-style: normal;color: #555;margin-top: 30px;padding-top: 25px;border-top: 1px solid rgba(139, 111, 71, 0.2);}
+.section {margin: 50px 0;padding: 30px;background: rgba(255, 255, 255, 0.7);border-radius: 15px;box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);}
+.section-title {font-size: 1.5em;color: #8b6f47;margin-bottom: 25px;text-align: center;font-weight: normal;}
+.message {margin: 25px 0;padding: 20px;background: white;border-left: 4px solid #d4a574;border-radius: 8px;font-size: 1.05em;}
+.emotions {text-align: center;margin-top: 30px;}
+.source-toggle {text-align: center;margin: 20px 0;padding: 15px;background: rgba(255, 255, 255, 0.5);border-radius: 10px;}
+.source-toggle label {margin: 0 15px;cursor: pointer;color: #666;font-size: 0.95em;}
+.source-toggle input[type="radio"] {margin-right: 5px;}
+.emotion-buttons {display: flex;flex-wrap: wrap;justify-content: center;gap: 12px;margin: 25px 0;}
+button {padding: 12px 20px;border: 2px solid #e8dcd0;border-radius: 25px;background-color: white;cursor: pointer;font-family: 'Georgia', serif;font-size: 1em;transition: all 0.3s ease;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);}
+button:hover {background-color: #e8dcd0;transform: translateY(-2px);box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);}
+button:disabled {opacity: 0.6;cursor: not-allowed;transform: none;}
+.verse-box {margin-top: 30px;padding: 25px;border-radius: 15px;background: linear-gradient(135deg, #fff9f0 0%, #ffffff 100%);box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);display: none;animation: fadeIn 0.5s ease;}
+.verse-box.show {display: block;}
+@keyframes fadeIn {from {opacity: 0;transform: translateY(10px);}to {opacity: 1;transform: translateY(0);}}
+.verse-text {font-size: 1.15em;color: #5a5a5a;margin-bottom: 15px;font-style: italic;}
+.verse-reference {text-align: right;color: #8b6f47;font-weight: bold;font-size: 0.95em;}
+.loading {text-align: center;color: #8b6f47;padding: 20px;}
+.spinner {border: 3px solid #f3f3f3;border-top: 3px solid #8b6f47;border-radius: 50%;width: 30px;height: 30px;animation: spin 1s linear infinite;margin: 10px auto;}
+@keyframes spin {0% { transform: rotate(0deg); }100% { transform: rotate(360deg); }}
+.error {background: #fee;color: #c33;padding: 15px;border-radius: 10px;margin-top: 10px;font-size: 0.95em;}
+.actions {display: flex;gap: 10px;margin-top: 20px;justify-content: center;flex-wrap: wrap;}
+.actions button {padding: 10px 18px;font-size: 0.95em;background: #8b6f47;color: white;border: none;}
+.actions button:hover {background: #6d5636;}
+.closing {text-align: center;margin-top: 60px;padding: 40px 30px;background: rgba(255, 255, 255, 0.8);border-radius: 20px;box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);font-size: 1.1em;color: #666;line-height: 2;}
+.heart {color: #d4a574;font-size: 1.3em;}
+@media (max-width: 600px) {
+.hero h1 {font-size: 2em;}
+.container {padding: 20px 10px;}
+.emotion-buttons {gap: 10px;}
+button {padding: 10px 16px;font-size: 0.95em;}
+.source-toggle label {display: block;margin: 8px 0;}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="hero">
+<h1>Hello, Bebe ♥️</h1>
+<p class="hero-message">"Keep this Book of the Law always on your lips; meditate on it day and night, so that you may be careful to do everything written in it. Then you will be prosperous and successful."</p>
+<p class="verse-reference-hero">— Joshua 1:8</p>
+<p class="personal-note">This is my gift for you, Bebe. I am always praying for you. Sa pagbabasa nito, hindi mo kailangan magmadali. What matters is that you are growing. You can read at least 1 chapter a day, starting with the Book of Matthew in the New Testament.</p>
+<p class="hero-message" style="margin-top: 25px;">"Jesus answered, 'It is written: Man shall not live on bread alone, but on every word that comes from the mouth of God.'"</p>
+<p class="verse-reference-hero">— Matthew 4:4</p>
+<p class="personal-note">A well-used Bible reflects a heart that is being made clean. Please take care of this gift, okay? This is not just a gift, this is a God breathed gift.</p>
+<p class="hero-message" style="margin-top: 25px;">"All Scripture is God-breathed and is useful for teaching, rebuking, correcting and training in righteousness, so that the servant of God may be thoroughly equipped for every good work."</p>
+<p class="verse-reference-hero">— 2 Timothy 3:16-17</p>
+<p class="personal-note">But before you read the Bible, ask God to give you knowledge and wisdom. Kailangan mo ng tulong Niya para maintindihan mo kung ano yung gustong iparating Niya sa'yo.</p>
+<p class="hero-message" style="margin-top: 25px;">"For the LORD gives wisdom; from his mouth come knowledge and understanding."</p>
+<p class="verse-reference-hero">— Proverbs 2:6</p>
+</div>
+
+<div class="section">
+<h2 class="section-title">📖 Words for Your Heart</h2>
+<div class="message">God is always near you, even on days you don't feel anything. His presence doesn't depend on your emotions, it is constant and always there.</div>
+<div class="message">You don't need to rush your faith. Just take it one step at a time. Even the smallest step forward is still progress.</div>
+<div class="message">Even one verse or chapter is enough for today. Small steps matter. Wag ka magmadali, just let one truth from God sink deep into your heart.</div>
+<div class="message">I hope you find peace when you open the Bible. Not pressure, just peace. It's not about checking a box, hindi siya requirement.</div>
+<div class="message">I'm always proud of you. Always. Not because of what you do, but because of who you are. I love youuu so much!♥️</div>
+</div>
+
+<div class="section">
+<h2 class="section-title">🙏 Remember This</h2>
+<div class="message">If you ever feel lost, just remember, God has never stopped walking with you. Even when you can't see the path, He's the light of the world.</div>
+<div class="message">You don't need to be perfect to come closer to Him. He meets you exactly where you are messy, tired, confused, and all.</div>
+<div class="message">Your worth isn't measured by your productivity or your spiritual performance. You are loved simply because you exist.</div>
+</div>
+
+<div class="section emotions">
+<h2 class="section-title">How are you feeling today, bebe?</h2>
+<p style="color: #888; margin-bottom: 20px;">Click mo lang kung ano nararamdaman mo, may lalabas na verse diyan. Malay mo may gusto sabihin si Lord diba?</p>
+
+<div class="source-toggle">
+<label><input type="radio" name="source" value="local" checked onchange="updateSource()"> Local Verses</label>
+<label><input type="radio" name="source" value="api" onchange="updateSource()"> Online Verses</label>
+</div>
+
+<div class="emotion-buttons">
+<button onclick="showVerse('happy')">😊 Happy</button>
+<button onclick="showVerse('sad')">😔 Sad</button>
+<button onclick="showVerse('anxious')">😟 Anxious</button>
+<button onclick="showVerse('tired')">😴 Tired</button>
+<button onclick="showVerse('lost')">😞 Lost</button>
+<button onclick="showVerse('grateful')">🙏 Grateful</button>
+<button onclick="showVerse('angry')">😠 Angry</button>
+<button onclick="showVerse('fearful')">😨 Fearful</button>
+<button onclick="showVerse('hopeful')">✨ Hopeful</button>
+<button onclick="showVerse('lonely')">💔 Lonely</button>
+<button onclick="showVerse('stressed')">😰 Stressed</button>
+<button onclick="showVerse('peaceful')">☮️ Peaceful</button>
+</div>
+
+<div id="verseBox" class="verse-box"></div>
+</div>
+
+<div class="closing">
+<span class="heart">♥️</span>
+<p>I made this for you because I care so much about you.</p>
+<p>I hope this becomes a reminder that you are loved by me, and by God.</p>
+<p>Take your time, okay? I'll always be here for you.</p>
+<span class="heart">♥️</span>
+</div>
+</div>
+
+<script>
+let useAPI = false;
+let currentVerse = null;
+
+const verses = {
+    happy: [
+        { text: "This is the day that the Lord has made; let us rejoice and be glad in it.", reference: "Psalm 118:24" },
+        { text: "Rejoice in the Lord always; again I will say, rejoice.", reference: "Philippians 4:4" },
+        { text: "The joy of the Lord is your strength.", reference: "Nehemiah 8:10" }
+    ],
+    sad: [
+        { text: "The Lord is close to the brokenhearted and saves those who are crushed in spirit. He hears you, even in the silence.", reference: "Psalm 34:18" },
+        { text: "Blessed are those who mourn, for they shall be comforted.", reference: "Matthew 5:4" },
+        { text: "He heals the brokenhearted and binds up their wounds.", reference: "Psalm 147:3" }
+    ],
+    anxious: [
+        { text: "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God. And the peace of God, which transcends all understanding, will guard your hearts and your minds.", reference: "Philippians 4:6-7" },
+        { text: "Cast all your anxieties on him, because he cares for you.", reference: "1 Peter 5:7" },
+        { text: "Peace I leave with you; my peace I give to you. Not as the world gives do I give to you. Let not your hearts be troubled, neither let them be afraid.", reference: "John 14:27" }
+    ],
+    tired: [
+        { text: "Come to me, all you who are weary and burdened, and I will give you rest. You don't have to carry everything alone.", reference: "Matthew 11:28" },
+        { text: "He gives power to the faint, and to him who has no might he increases strength.", reference: "Isaiah 40:29" },
+        { text: "My soul finds rest in God alone; my salvation comes from him.", reference: "Psalm 62:1" }
+    ],
+    lost: [
+        { text: "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future. Even when you can't see the way, He does.", reference: "Jeremiah 29:11" },
+        { text: "Trust in the Lord with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths.", reference: "Proverbs 3:5-6" },
+        { text: "I am the way, and the truth, and the life.", reference: "John 14:6" }
+    ],
+    grateful: [
+        { text: "Give thanks in all circumstances; for this is the will of God in Christ Jesus for you.", reference: "1 Thessalonians 5:18" },
+        { text: "Oh give thanks to the Lord, for he is good, for his steadfast love endures forever!", reference: "Psalm 107:1" },
+        { text: "Enter his gates with thanksgiving, and his courts with praise! Give thanks to him; bless his name!", reference: "Psalm 100:4" }
+    ],
+    angry: [
+        { text: "Be angry and do not sin; do not let the sun go down on your anger.", reference: "Ephesians 4:26" },
+        { text: "A soft answer turns away wrath, but a harsh word stirs up anger.", reference: "Proverbs 15:1" },
+        { text: "Know this, my beloved brothers: let every person be quick to hear, slow to speak, slow to anger.", reference: "James 1:19" }
+    ],
+    fearful: [
+        { text: "Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand.", reference: "Isaiah 41:10" },
+        { text: "For God gave us a spirit not of fear but of power and love and self-control.", reference: "2 Timothy 1:7" },
+        { text: "Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me.", reference: "Psalm 23:4" }
+    ],
+    hopeful: [
+        { text: "May the God of hope fill you with all joy and peace in believing, so that by the power of the Holy Spirit you may abound in hope.", reference: "Romans 15:13" },
+        { text: "For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope.", reference: "Jeremiah 29:11" },
+        { text: "But they who wait for the Lord shall renew their strength; they shall mount up with wings like eagles.", reference: "Isaiah 40:31" }
+    ],
+    lonely: [
+        { text: "The Lord is near to all who call on him, to all who call on him in truth.", reference: "Psalm 145:18" },
+        { text: "I will never leave you nor forsake you.", reference: "Hebrews 13:5" },
+        { text: "God sets the lonely in families.", reference: "Psalm 68:6" }
+    ],
+    stressed: [
+        { text: "Come to me, all who labor and are heavy laden, and I will give you rest.", reference: "Matthew 11:28" },
+        { text: "Cast your burden on the Lord, and he will sustain you.", reference: "Psalm 55:22" },
+        { text: "The Lord will fight for you, and you have only to be silent.", reference: "Exodus 14:14" }
+    ],
+    peaceful: [
+        { text: "Peace I leave with you; my peace I give to you.", reference: "John 14:27" },
+        { text: "You keep him in perfect peace whose mind is stayed on you, because he trusts in you.", reference: "Isaiah 26:3" },
+        { text: "And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus.", reference: "Philippians 4:7" }
+    ]
+};
+
+const apiVerseReferences = {
+    happy: ['Psalm 118:24', 'Philippians 4:4', 'Psalm 16:11', 'Proverbs 17:22', 'Nehemiah 8:10'],
+    sad: ['Psalm 34:18', 'Matthew 5:4', 'Psalm 147:3', '2 Corinthians 1:3-4', 'Psalm 42:11'],
+    anxious: ['Philippians 4:6-7', '1 Peter 5:7', 'Matthew 6:34', 'Isaiah 41:10', 'John 14:27'],
+    tired: ['Matthew 11:28-30', 'Isaiah 40:29-31', 'Psalm 23:1-3', 'Psalm 62:1'],
+    lost: ['Jeremiah 29:11', 'Proverbs 3:5-6', 'John 14:6', 'Psalm 119:105', 'Isaiah 30:21'],
+    grateful: ['1 Thessalonians 5:18', 'Psalm 100:4-5', 'Colossians 3:17', 'Psalm 107:1'],
+    angry: ['Ephesians 4:26-27', 'Proverbs 15:1', 'James 1:19-20', 'Psalm 37:8'],
+    fearful: ['Isaiah 41:10', '2 Timothy 1:7', 'Psalm 27:1', 'Joshua 1:9', 'Psalm 23:4'],
+    hopeful: ['Romans 15:13', 'Hebrews 11:1', 'Lamentations 3:22-23', 'Jeremiah 29:11'],
+    lonely: ['Psalm 68:6', 'Hebrews 13:5', 'Matthew 28:20', 'Deuteronomy 31:6', 'Psalm 145:18'],
+    stressed: ['Psalm 55:22', 'Matthew 11:28', '1 Peter 5:7', 'Philippians 4:6', 'Exodus 14:14'],
+    peaceful: ['John 14:27', 'Isaiah 26:3', 'Philippians 4:7', 'Colossians 3:15', 'Psalm 29:11']
+};
+
+function updateSource() {
+    useAPI = document.querySelector('input[name="source"]:checked').value === 'api';
+}
+
+async function showVerse(emotion) {
+    const box = document.getElementById('verseBox');
+    document.querySelectorAll('.emotion-buttons button').forEach(btn => btn.disabled = true);
+    box.innerHTML = '<div class="spinner"></div><div class="loading">Finding the perfect verse for you...</div>';
+    box.classList.add('show');
+    box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+    try {
+        let verse;
+        if (useAPI) {
+            verse = await fetchVerseFromAPI(emotion);
+        } else {
+            await new Promise(resolve => setTimeout(resolve, 500));
+            verse = getLocalVerse(emotion);
+        }
+
+        currentVerse = verse;
+        box.innerHTML = `
+            <div class="verse-text">"${verse.text}"</div>
+            <div class="verse-reference">— ${verse.reference}</div>
+            <div class="actions">
+                <button onclick="speakVerse()">🔊 Listen</button>
+                <button onclick="copyVerse()">📋 Copy</button>
+                <button onclick="saveVerse()">💾 Save</button>
+            </div>
+        `;
+        saveToHistory(emotion, verse);
+    } catch (error) {
+        box.innerHTML = `<div class="error">Unable to load verse from API. ${error.message}</div>`;
+        console.error(error);
+    } finally {
+        document.querySelectorAll('.emotion-buttons button').forEach(btn => btn.disabled = false);
+    }
+}
+
+function getLocalVerse(emotion) {
+    const verseList = verses[emotion] || verses.lost;
+    return verseList[Math.floor(Math.random() * verseList.length)];
+}
+
+async function fetchVerseFromAPI(emotion) {
+    const references = apiVerseReferences[emotion] || apiVerseReferences.lost;
+    const randomRef = references[Math.floor(Math.random() * references.length)];
+    
+    try {
+        const response = await fetch(`https://bible.helloao.org/api/${encodeURIComponent(randomRef)}.json`);
+        if (response.ok) {
+            const data = await response.json();
+            if (data.verses && data.verses.length > 0) {
+                const verseText = data.verses.map(v => v.text).join(' ');
+                return {
+                    text: verseText.trim(),
+                    reference: data.reference || randomRef
+                };
+            }
+        }
+    } catch (e) {
+        console.log('Faith.Tools API failed, trying fallback...');
+    }
+    
+    try {
+        const response = await fetch(`https://labs.bible.org/api/?passage=${encodeURIComponent(randomRef)}&type=json`);
+        if (response.ok) {
+            const data = await response.json();
+            if (Array.isArray(data) && data.length > 0) {
+                const verseText = data.map(v => v.text).join(' ');
+                return {
+                    text: verseText.trim(),
+                    reference: randomRef
+                };
+            }
+        }
+    } catch (e) {
+        console.log('Bible.org API failed, trying final fallback...');
+    }
+    
+    const response = await fetch(`https://bible-api.com/${encodeURIComponent(randomRef)}`);
+    if (!response.ok) {
+        throw new Error('All APIs failed. Please use local verses.');
+    }
+    const data = await response.json();
+    return {
+        text: data.text.trim(),
+        reference: data.reference
+    };
+}
+
+function speakVerse() {
+    if (!currentVerse) return;
+    if ('speechSynthesis' in window) {
+        speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(`${currentVerse.text}. ${currentVerse.reference}`);
+        utterance.rate = 0.85;
+        utterance.pitch = 1;
+        speechSynthesis.speak(utterance);
+    } else {
+        alert('Speech synthesis not supported in your browser');
+    }
+}
+
+function copyVerse() {
+    if (!currentVerse) return;
+    const text = `"${currentVerse.text}"\n— ${currentVerse.reference}`;
+    navigator.clipboard.writeText(text).then(() => {
+        alert('✅ Verse copied to clipboard!');
+    }).catch(() => {
+        alert('❌ Failed to copy. Please try again.');
+    });
+}
+
+function saveVerse() {
+    if (!currentVerse) return;
+    const saved = JSON.parse(localStorage.getItem('savedVerses') || '[]');
+    const alreadySaved = saved.some(v => v.reference === currentVerse.reference);
+    if (alreadySaved) {
+        alert('This verse is already saved!');
+        return;
+    }
+    saved.push({...currentVerse, savedAt: new Date().toISOString()});
+    localStorage.setItem('savedVerses', JSON.stringify(saved));
+    alert('💾 Verse saved successfully!');
+}
+
+function saveToHistory(emotion, verse) {
+    const history = JSON.parse(localStorage.getItem('verseHistory') || '[]');
+    history.unshift({emotion, verse, timestamp: new Date().toISOString()});
+    if (history.length > 50) history.pop();
+    localStorage.setItem('verseHistory', JSON.stringify(history));
+}
+</script>
+</body>
+</html>
